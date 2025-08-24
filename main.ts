@@ -1,4 +1,15 @@
-basic.forever(function on_forever() {
-    
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
+    motobit.enable(MotorPower.On)
+    motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 100)
+    motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 100)
+    basic.pause(1000)
+    motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 100)
+    motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 100)
+    basic.pause(200)
+    motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 100)
+    motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 100)
+    basic.pause(1000)
+    motobit.enable(MotorPower.Off)
 })
-motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+motobit.invert(Motor.Left, false)
+motobit.invert(Motor.Right, false)
